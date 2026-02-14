@@ -1,0 +1,171 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:'Poppins',sans-serif;
+overflow:hidden;
+
+/* cinematic gradient */
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3a5);
+background-size:400% 400%;
+animation:bgMove 12s infinite alternate;
+}
+
+@keyframes bgMove{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+/* ENVELOPE */
+
+#envelope{
+font-size:120px;
+cursor:pointer;
+text-align:center;
+animation:float 2s infinite ease-in-out;
+}
+
+#envelope p{
+font-size:20px;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+/* LETTER */
+
+#letter{
+position:fixed;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+/* GLASS CARD */
+
+.card{
+
+width:90vw;
+max-width:700px;
+height:80vh;
+
+padding:35px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(20px);
+
+box-shadow:0 0 80px rgba(255,0,130,.4);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+
+transform:scale(.6);
+opacity:0;
+transition:.8s;
+}
+
+.card.open{
+transform:scale(1);
+opacity:1;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:52px;
+margin-bottom:10px;
+}
+
+.cat{
+font-size:60px;
+margin:10px;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+gap:20px;
+margin:20px;
+}
+
+button{
+border:none;
+padding:14px 26px;
+font-size:18px;
+border-radius:14px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+box-shadow:0 0 20px #ff4d6d;
+animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+#no{
+background:white;
+}
+
+/* MESSAGE */
+
+#message{
+font-size:18px;
+line-height:1.8;
+overflow:auto;
+padding:10px;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:18px;
+animation:rise linear forwards;
+}
+
+@keyframes rise{
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* CONFETTI */
+
+.confetti{
+position:fixed;
+width:8px;
+height:8px;
+background:red;
+top:-10px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(120vh) rotate(720deg);
+opacity:0;
+}
+}
